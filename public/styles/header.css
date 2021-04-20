@@ -1,4 +1,4 @@
-header {
+body > header {
   height: 520px;  
   background-color:#595959;
   background-image: url(../images/black-paper.png);

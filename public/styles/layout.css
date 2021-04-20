@@ -27,6 +27,34 @@ main {
   margin: 0 auto;
   background-color: #f4f1ec;
 }
+article {
+  margin-top: 3em;
+  border: 3px solid;
+}
+article footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5em;
+  height: 1em;
+}
+article footer h6 {
+  margin: 0;
+}
+article header {
+  margin: 0.5em;
+  border-bottom: 3px solid;
+}
+article header div {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2em;
+}
+article header div h3 {
+  margin: 0;
+}
+  /* margin-bottom
+} */
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

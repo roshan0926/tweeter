@@ -3,7 +3,7 @@ $(document).ready(function() {
     let length = $(this).val().length
     let $counter= $(this).parent('form').find('.counter')
     updateCountdown($counter, length)
-  })
+  })  
 })
 
 function updateCountdown($counter, length) {
