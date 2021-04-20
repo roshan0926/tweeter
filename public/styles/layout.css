@@ -13,14 +13,15 @@ html {
 /*
  * Global layout stuff
  */
-
-body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
-  font-family: 'Source Sans Pro';
-}
-
+ body {
+   color: #545149;
+   background-color: #f4f1ec;
+   font-size: 24px;
+   font-family: 'Source Sans Pro';
+  }
+body header div h2 {
+    color: #cccccc
+  }
 main {
   width: 90%;
   margin: 0 auto;

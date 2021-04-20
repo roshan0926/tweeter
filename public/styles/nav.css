@@ -1,9 +1,9 @@
 nav {
   display: flex;
   flex-direction: row;
-  background-color: #4056A1;
+  background-color: #1a1a1a;
   height: 120px;
-  color: #FFFFFF;
+  color: #a6a6a6;
   width: 100%;
   justify-content: space-between;
   align-items: center;
@@ -23,5 +23,5 @@ nav > span {
 }
 
 .fa-angle-double-down{
-  color: red;
+  color: white;
 }
