@@ -1,0 +1,9 @@
+header {
+  height: 520px;  
+  background-color: black;
+  background-image: url(../images/black-paper.png);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120px;
+}
