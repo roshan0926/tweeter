@@ -1,5 +1,26 @@
 .new-tweet {
-  background-color: inherit;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
 }
 
-/* .textbox { */
+.textbox {
+  width: 1000px;
+  resize: none;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  border-bottom:  3px solid;
+}
+
+.button {
+  background-color: #4056A1;
+  color: #FFF;
+}
+
+.button-word-counter {
+  font-family: "Bungee";
+  display: flex;
+  justify-content: space-between;
+}
