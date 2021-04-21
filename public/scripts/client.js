@@ -6,12 +6,17 @@ function renderTweets(tweets) {
     $container.prepend($tweet)
   })
 }
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 const createTweetElement = function (tweet) {
   const name = tweet.user.name
   const avatars = tweet.user.avatars
   const handle = tweet.user.handle
-  const text = tweet.content.text
+  const text = escape(tweet.content.text);
   const created_at = timeago.format(new Date(tweet.created_at))
   const $tweet = $(`<article class='tweet'>
   <header>
@@ -75,4 +80,5 @@ $(document).ready(function () {
     })
   }
   getTweetsonLoad()
+  $("<div>").text(textFromUser);
 });
