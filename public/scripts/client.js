@@ -44,21 +44,35 @@ $(document).ready(function () {
     } else if ($('.textbox').val().length === 0 || $('.textbox').val() === "") {
       return alert('Tweet is empty!')
     }
-      console.log('Handler for .submit() called.');
-      console.log($(event.target).serialize());
-      $.ajax({
-        type: 'POST',
-        url: '/tweets',
-        data: $(event.target).serialize(),
-      }).then(() => {
-        console.log('Successfully loaded');
-      });
+    console.log('Handler for .submit() called.');
+    console.log($(event.target).serialize());
+    $.ajax({
+      type: 'POST',
+      url: '/tweets',
+      data: $(event.target).serialize(),
+    }).then(() => {
+      console.log('Successfully loaded');
+      getTweets()
+      loadTweets()
     });
-
+  });
   const loadTweets = function () {
-    $.get("/tweets", function (tweets) {
-      renderTweets(tweets)
+    $.ajax('/tweets', { method: 'GET', data: $(this).serialize() })
+    .then(() => {
+      $('.textbox').val("");
     })
   }
-  loadTweets()
+  const getTweetsonLoad = function () {
+    $.get("/tweets", function (tweets) {
+      renderTweets(tweets)
+      console.log('these are tweets', tweets)
+    })
+  }
+  const getTweets = function () {
+    $.get("/tweets", function (tweets) {
+      renderTweets([tweets[tweets.length - 1]])
+      console.log('these are tweets', tweets)
+    })
+  }
+  getTweetsonLoad()
 });
