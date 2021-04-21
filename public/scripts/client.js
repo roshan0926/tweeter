@@ -15,7 +15,8 @@ const data = [
     "user": {
       "name": "Descartes",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
+      "handle": "@rd"
+    },
     "content": {
       "text": "Je pense , donc je suis"
     },
@@ -27,11 +28,11 @@ function renderTweets(tweets) {
   $container = $('#tweets-container')
   tweets.forEach(tweet => {
     let $tweet = createTweetElement(tweet)
-    console.log($tweet)
+    // console.log($tweet)
     $container.append($tweet)
   })
 }
-// console.log(data[0].user.name)
+
 const createTweetElement = function (tweet) {
   const name = tweet.user.name
   const avatars = tweet.user.avatars
@@ -60,12 +61,22 @@ const createTweetElement = function (tweet) {
   return $tweet;
 }
 
-
-$( document ).ready(function() {
+$(document).ready(function () {
   renderTweets(data)
+  
   timeago.render(document.querySelectorAll('.tweetDate'));
-  $('#tweets-container').append($tweet);
+  $('.new-tweet form').submit((event) => {
+    console.log('Handler for .submit() called.');
+    event.preventDefault();
+    console.log($(event.target).serialize());
+    $.ajax({
+      type: 'POST',
+      url: '/tweets',
+      data: $(event.target).serialize(),
+    }).then(() => {
+      console.log('Successfully loaded');
+    });
+  });
+  
 });
-; // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 
-// renderTweets(data);
