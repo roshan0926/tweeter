@@ -1,7 +1,7 @@
 # Tweeter Project
 Tweeter is a simple, single-page Twitter clone.
 
-Applided my  HTML, CSS, JS, jQuery and AJAX front-end skills, and my Node, Express and MongoDB back-end skills. To create this fully functional single page web app called tweeter (very original).
+Applied my  HTML, CSS, JS, jQuery and AJAX front-end skills, and my Node, Express and MongoDB back-end skills. To create this fully functional single page web app called tweeter (very original).
 
 ## Getting Started
 
