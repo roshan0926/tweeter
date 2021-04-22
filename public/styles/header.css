@@ -10,7 +10,6 @@ body > header {
 }
 
 @media screen and (min-width: 1024px) {
-  
   body > header {
     padding: 20px;
     margin-right: 100px;
