@@ -1,9 +1,9 @@
-$(document).ready(function() {
+$(document).ready(function () {
   $('textarea').on('input', function (event) {
     let length = $(this).val().length
-    let $counter= $(this).parent('form').find('.counter')
+    let $counter = $(this).parent('form').find('.counter')
     updateCountdown($counter, length)
-  })  
+  })
 })
 
 function updateCountdown($counter, length) {

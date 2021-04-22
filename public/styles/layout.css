@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -14,77 +15,96 @@ html {
  * Global layout stuff
  */
 
- body {
+body {
    color: #545149;
    background-color: #f4f1ec;
    font-size: 24px;
    font-family: 'Source Sans Pro';
-  }
+}
+
 body header div h2 {
     color: #cccccc
-  }
+}
+
 main {
   width: 90%;
   margin: 0 auto;
   background-color: #f4f1ec;
 }
+
 article {
   margin-top: 3em;
   border: 3px solid;
 }
+
 article:hover {
   box-shadow: 5px 10px 10px;
 }
+
 article header {
   margin: 0.5em;
   border-bottom: 3px solid;
 }
+
 article header div {
   display: flex;
   justify-content: space-between;
   padding-bottom: 1em;
 }
+
 article header div h3 {
   margin: 0;
   display: flex;
   flex-wrap: row;
 }
+
 article footer {
   display: flex;
   justify-content: space-between;
   margin: 0.5em;
   height: 1em;
 }
+
 article footer h6 {
   margin: 0;
 }
-article footer h6 i{
+
+article footer h6 i {
   padding: 3px;
 }
-article footer h6 i:hover{
+
+article footer h6 i:hover {
   color: #a6a6a6;
 }
+
 article header div p {
   word-break: break-all;
+}
+
+.error-msg {
+  display:none;
 }
 
 @media screen and (min-width: 1024px) {
   body {
     display: flex;
   }
+
   main {
     width: 40vw;
     margin: 0;
     margin-right: 10vw;
   }
+
   article {
     width: 40vw
   }
-  article header{
+
+  article header {
     width: 38vw;
   }
+
   article header div p {
-    /* word-break: break-all; */
     max-width: 70ch;
   }
 }

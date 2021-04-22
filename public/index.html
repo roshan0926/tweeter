@@ -3,7 +3,7 @@
 
 <head>
   <!-- Meta Information -->
-  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Tweeter - Home Page</title>
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -32,7 +32,7 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span>tweeter</span>
-    <div class='write-button'>
+    <div class="write-button">
       <span><strong>Write</strong> a new tweet here</span>
       <span><i class="fas fa-angle-double-down"></i></span>
     </div>
@@ -50,35 +50,16 @@
   <main class="container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-        <div class="error-msg"  style="display:none"></div>
-      <form method="post" action='/tweets/'>
-        <textarea class='textbox' name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-        <div class='button-word-counter'>
-          <button class='button' type="submit">Tweet</button>
+        <div class="error-msg"></div>
+      <form method="post" action="/tweets/">
+        <textarea class="textbox" name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+        <div class="button-word-counter">
+          <button class="button" type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
     </section>
     <section id="tweets-container"></section>
-    <!-- <article>
-      <header>
-        <div>
-          <h3>icon </h3>
-          <h3>@who</h3>
-        </div>
-        <div>
-          <h3>Here is my tweet on tweeter that things are going totally great!</h3>
-        </div>
-      </header>
-      <footer>
-        <h6 class="tweetDate" datetime="2021-04-08T09:24:17Z"></h6>
-        <h6>
-          <i class="fas fa-flag"></i>
-          <i class="fas fa-retweet"></i>
-          <i class="fas fa-heart"></i>
-        </h6>
-      </footer>
-    </article> -->
   </main>
 </body>
 </html>
