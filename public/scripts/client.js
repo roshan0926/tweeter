@@ -25,7 +25,7 @@ const createTweetElement = function (tweet) {
       <h3>${handle}</h3>
     </div>
     <div>
-      <h3>${text}</h3>
+      <p>${text}</p>
     </div>
   </header>
   <footer>
@@ -55,11 +55,11 @@ $(document).ready(function () {
     event.preventDefault();
     if ($('.textbox').val().length > 140) {
       return errorMsg('overLimit')
-    } else if ($('.textbox').val().length === 0) {
+    } else if ($('.textbox').val().trim().length === 0 || $('.textbox').val().trim() === '') {
       return errorMsg('emptyStr')
     }
     console.log('Handler for .submit() called.');
-    console.log($(event.target).serialize(500, complete));
+    console.log($(event.target).serialize());
     $.ajax({
       type: 'POST',
       url: '/tweets',
@@ -89,5 +89,5 @@ $(document).ready(function () {
     })
   }
   getTweetsonLoad()
-  $("<div>").text(textFromUser);
+  // $("<div>").text(textFromUser);
 });
