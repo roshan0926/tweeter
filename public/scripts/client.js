@@ -39,18 +39,27 @@ const createTweetElement = function (tweet) {
 </article>`);
   return $tweet;
 }
-
+const errors = {
+  emptyStr: '⚠️ WARNING: This tweet is empty',
+  overLimit: '⚠️ WARNING: This tweet exceeds the character limit'
+}
+const errorMsg = (type) => {
+  const msg = errors[type]
+  $('.error-msg').text(msg).slideDown(500, complete => {
+    setTimeout(() => $('.error-msg').slideUp(), 3000)
+  })
+}
 $(document).ready(function () {
 
   $('.new-tweet form').submit((event) => {
     event.preventDefault();
     if ($('.textbox').val().length > 140) {
-      return alert('Character count is over the limit!')
-    } else if ($('.textbox').val().length === 0 || $('.textbox').val() === "") {
-      return alert('Tweet is empty!')
+      return errorMsg('overLimit')
+    } else if ($('.textbox').val().length === 0) {
+      return errorMsg('emptyStr')
     }
     console.log('Handler for .submit() called.');
-    console.log($(event.target).serialize());
+    console.log($(event.target).serialize(500, complete));
     $.ajax({
       type: 'POST',
       url: '/tweets',
@@ -63,9 +72,9 @@ $(document).ready(function () {
   });
   const loadTweets = function () {
     $.ajax('/tweets', { method: 'GET', data: $(this).serialize() })
-    .then(() => {
-      $('.textbox').val("");
-    })
+      .then(() => {
+        $('.textbox').val("");
+      })
   }
   const getTweetsonLoad = function () {
     $.get("/tweets", function (tweets) {
